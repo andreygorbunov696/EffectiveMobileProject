@@ -11,9 +11,26 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import sys
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+MANAGE_ROOT = os.path.dirname(PROJECT_ROOT)
+SETTINGS_ROOT = Path(__file__).resolve().parent.parent
+
+sys.path.append(str(PROJECT_ROOT / 'apps'))
+
+def join_to_project(slug):
+    return os.path.join(PROJECT_ROOT, slug)
+
+def join_to_manage(slug):
+    return os.path.join(MANAGE_ROOT, slug)
+
+def join_to_settings(slug):
+    return os.path.join(SETTINGS_ROOT, slug)
 
 
 # Quick-start development settings - unsuitable for production
@@ -54,7 +71,7 @@ ROOT_URLCONF = 'project_src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [join_to_settings('templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,6 +79,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.csrf",
+                "django.template.context_processors.media",
             ],
         },
     },
@@ -73,12 +93,18 @@ WSGI_APPLICATION = 'project_src.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'effective_mobile',
+        'USER': 'effective_mobile',
+        'PASSWORD': 'effective_mobile',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -115,7 +141,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+MEDIA_ROOT = join_to_project('media')
+STATIC_ROOT = join_to_project('allstatic')
+CSS_ROOT = os.path.join(STATIC_ROOT, 'css')
+JS_ROOT = os.path.join(STATIC_ROOT, 'js')
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
