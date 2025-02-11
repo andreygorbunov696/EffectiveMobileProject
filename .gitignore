@@ -1,0 +1,37 @@
+# OS-generated files
+*.log  # Log files
+*.pot  # Translation template files
+*.pyc  # Compiled Python files
+*.pyo  # Compiled Python optimization files
+*.swp  # Swap files (temporary editor files)
+*.swo  # Swap files (temporary editor files)
+.DS_Store  # macOS system file
+Thumbs.db  # Windows system file
+
+# Virtual environment
+venv/  # Python virtual environment
+env/  # Alternative virtual environment folder
+*.venv  # Any file with .venv extension
+*.env  # Environment configuration files
+
+# Configuration files with secrets
+.env  # Environment variables file
+*.sqlite3  # SQLite database files
+db.sqlite3  # Default Django SQLite database
+/secrets.json  # Secrets storage file
+
+# Django cache and temporary files
+__pycache__/  # Compiled Python cache files
+db.sqlite3-journal  # SQLite journal file
+*.pid  # Process ID files
+
+# Static and media files
+staticfiles/  # Collected static files (generated with `collectstatic`)
+media/  # Uploaded media files
+
+# Migrations files
+*/migrations/*.pyc  # Compiled migration files
+*/migrations/*.pyo  # Compiled migration optimization files
+*/migrations/*.log  # Migration logs
+*/migrations/__pycache__/  # Cache folder inside migrations
+*/migrations/*.sqlite3  # SQLite migration files
