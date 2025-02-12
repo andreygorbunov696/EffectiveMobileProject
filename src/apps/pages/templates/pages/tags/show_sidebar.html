@@ -1,0 +1,22 @@
+{% load static i18n sidebar_tags %}
+
+<g-sidebar>
+    <g-sidebar-slot type="menu">
+        <li class="title">Dashboard</li>
+        <g-sidebar-button class="{% if request.resolver_match.view_name != 'home' %}sg-sidebar-button--inactive{% endif %}" href="{% url 'home' %}">
+            <span class="material-symbols-outlined">analytics</span>Analytics
+        </g-sidebar-button>
+        <li class="title">Front of house</li>
+        <g-sidebar-button href="{% url 'tables' %}" class="{% if request.resolver_match.view_name != 'tables' %}sg-sidebar-button--inactive{% endif %}">
+            <span class="material-symbols-outlined">table_restaurant</span>Tables
+        </g-sidebar-button>
+        <g-sidebar-button class="sg-sidebar-button--inactive">
+            <span class="material-symbols-outlined">dataset</span>Order
+        </g-sidebar-button>
+        <li class="title">Back of house</li>
+        <g-sidebar-button class="sg-sidebar-button--inactive">
+            <span class="material-symbols-outlined">list_alt</span>Order list
+        </g-sidebar-button>
+    </g-sidebar-slot>
+</g-sidebar>
+

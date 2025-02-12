@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: $body-font-family;
+    font-size: $base-font-size;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: $sidebar-background-color;
+  }
+
+  a {
+    text-decoration: none; // Убираем подчеркивание у ссылок
+    color: $primary-color; // Цвет ссылок
+    font-size: 16px; // Размер шрифта
+    transition: color 0.3s; // Плавное изменение цвета при наведении
+  
+    &:hover {
+        color: $hover-color; // Цвет при наведении
+    }
+  }
+
