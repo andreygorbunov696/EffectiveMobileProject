@@ -1,0 +1,46 @@
+g-sidebar-button {
+    display: flex; /* Используем flex-контейнер */
+    align-items: center; /* Выравнивание содержимого по центру */
+    width: 90%; // Кнопка на всю ширину
+    padding: 6px 10px; /* Увеличенный padding для лучшего выравнивания */
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    border-radius: 6px;
+    background-color: white;
+    color: $primary-color;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .material-symbols-outlined {
+      font-size: 18px; /* Размер иконки */
+      margin-right: 8px; /* Отступ от текста */
+      line-height: 1; /* Убираем лишний отступ */
+      display: flex; /* Гарантируем выравнивание */
+      align-items: center; /* Центрируем иконку внутри */
+      justify-content: center; /* Если иконка не центрируется */
+    }
+  
+    &.g-sidebar-button--disabled {
+      background-color: #f0f0f0 !important;
+      color: #a0a0a0 !important;
+      border-color: #d0d0d0 !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+      opacity: 0.6; /* Делаем кнопку визуально неактивной */
+      box-shadow: none !important;
+    }
+  
+    // Состояние "раздел не выбран"
+    &.sg-sidebar-button--inactive {
+      background-color: transparent; /* Светлый фон */
+      color: #2b2b2b; /* Бледный текст */
+      box-shadow: none;
+      cursor: pointer;
+    }
+  }

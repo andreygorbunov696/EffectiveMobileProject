@@ -1,0 +1,156 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/main.scss ***!
+  \****************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./static/scss/main.scss (1) ***!
+  \********************************************************************************************************************/
+@charset "UTF-8";
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: rgb(238, 238, 238);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(9, 88, 145, 0.8);
+  font-size: 16px;
+  transition: color 0.3s;
+}
+a:hover {
+  color: rgba(9, 88, 145, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+g-content-full {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+g-sidebar {
+  width: 16.66%;
+  background-color: rgb(238, 238, 238);
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+g-content {
+  width: 83.34%;
+  margin-left: 16.66%;
+  padding: 40px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+g-sidebar-slot[type=menu] {
+  flex-grow: 1;
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+  color: #757575;
+  width: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 320px);
+  /* Скроллбар */
+}
+g-sidebar-slot[type=menu] li, g-sidebar-slot[type=menu] a {
+  font-size: 14px;
+  padding-left: 10px;
+  display: block;
+  color: #757575;
+}
+g-sidebar-slot[type=menu] .title {
+  font-size: 10px;
+  color: rgba(117, 117, 117, 0.7);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+g-sidebar-slot[type=menu]::-webkit-scrollbar {
+  width: 6px;
+}
+g-sidebar-slot[type=menu]::-webkit-scrollbar-thumb {
+  background: rgba(117, 117, 117, 0.5);
+  border-radius: 3px;
+}
+g-sidebar-slot[type=menu]::-webkit-scrollbar-thumb:hover {
+  background: rgba(117, 117, 117, 0.7);
+}
+
+/* Анимации */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+g-sidebar-button {
+  display: flex; /* Используем flex-контейнер */
+  align-items: center; /* Выравнивание содержимого по центру */
+  width: 90%;
+  padding: 6px 10px; /* Увеличенный padding для лучшего выравнивания */
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 6px;
+  background-color: white;
+  color: rgba(9, 88, 145, 0.8);
+  outline: none;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+g-sidebar-button .material-symbols-outlined {
+  font-size: 18px; /* Размер иконки */
+  margin-right: 8px; /* Отступ от текста */
+  line-height: 1; /* Убираем лишний отступ */
+  display: flex; /* Гарантируем выравнивание */
+  align-items: center; /* Центрируем иконку внутри */
+  justify-content: center; /* Если иконка не центрируется */
+}
+g-sidebar-button.g-sidebar-button--disabled {
+  background-color: #f0f0f0 !important;
+  color: #a0a0a0 !important;
+  border-color: #d0d0d0 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  opacity: 0.6; /* Делаем кнопку визуально неактивной */
+  box-shadow: none !important;
+}
+g-sidebar-button.sg-sidebar-button--inactive {
+  background-color: transparent; /* Светлый фон */
+  color: #2b2b2b; /* Бледный текст */
+  box-shadow: none;
+  cursor: pointer;
+}

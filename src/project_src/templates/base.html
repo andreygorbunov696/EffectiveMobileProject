@@ -1,0 +1,30 @@
+{% load webpack_loader static compress i18n sidebar_tags %}
+{% load render_bundle from webpack_loader %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ project_name }}{% endblock %}</title>
+    {% compress css %}
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    {% render_bundle 'main' 'css' %}
+    {% endcompress %}
+    </head>
+    <body>
+        {% block content-full %}
+        <g-content-full>
+            {% block content-sidebar %}{% show_sitebar %}{% endblock content-sidebar %}
+            <g-content>
+                {% block content %}{% endblock %}
+            </g-content>
+        </g-content-full>
+            
+        {% endblock content-full %}
+        
+        {% compress js %}
+        {% render_bundle 'main' 'js' %}
+        {% endcompress %}
+    </body>
+</html>

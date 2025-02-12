@@ -1,0 +1,21 @@
+{
+  "status": "done",
+  "assets": {
+    "css/main.css": {
+      "name": "css/main.css",
+      "path": "/Users/andreya.gorbunov/Code/EffectiveMobile/EffectiveMobileProject/src/project_src/static/dist/css/main.css"
+    },
+    "js/main.js": {
+      "name": "js/main.js",
+      "path": "/Users/andreya.gorbunov/Code/EffectiveMobile/EffectiveMobileProject/src/project_src/static/dist/js/main.js"
+    }
+  },
+  "chunks": {
+    "main": [
+      "css/main.css",
+      "js/main.js"
+    ]
+  },
+  "error": "ModuleBuildError",
+  "message": "Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nUndefined variable.\n  ╷\n8 │     background-color: $background-color;\n  │                       ^^^^^^^^^^^^^^^^^\n  ╵\n  static/scss/components/typography/_typography.scss 8:23  @import\n  static/scss/main.scss 2:9                                root stylesheet"
+}
