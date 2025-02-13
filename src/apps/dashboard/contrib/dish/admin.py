@@ -1,19 +1,19 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
-from .models import OrderList
+from .models import Dish
 
-@admin.register(OrderList)
-class OrderListAdmin(admin.ModelAdmin):
-    list_display = ('dish_name', 'dish_status', 'dish_total', 'created_at', 'updated_at')
-    list_display_links = ('dish_name',)
-    list_filter = ('dish_status', 'created_at', 'updated_at', 'dish_status')
-    search_fields = ('dish_name',)
+@admin.register(Dish)
+class DishAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active', 'total', 'created_at', 'updated_at')
+    list_display_links = ('name',)
+    list_filter = ('is_active', 'created_at', 'updated_at')
+    search_fields = ('name',)
     ordering = ('-created_at',)
-    list_editable = ('dish_status', 'dish_total')
+    list_editable = ('is_active', 'total')
 
     fieldsets = (
         (_('Dish Information'), {
-            'fields': ('dish_name', 'dish_total', 'dish_status')
+            'fields': ('name', 'total', 'is_active')
         }),
         (_('Description'), {
             'fields': ('description',),
