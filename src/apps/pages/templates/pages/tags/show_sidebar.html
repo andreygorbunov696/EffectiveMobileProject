@@ -14,7 +14,7 @@
             <span class="material-symbols-outlined">dataset</span>Order
         </g-sidebar-button>
         <li class="title">Back of house</li>
-        <g-sidebar-button href="{% url 'order_list' %}" class="{% if request.resolver_match.view_name != 'order_list' %}sg-sidebar-button--inactive{% endif %}">
+        <g-sidebar-button href="{% url 'order_list_detail' %}" class="{% if request.resolver_match.view_name != 'order_list_detail' %}sg-sidebar-button--inactive{% endif %}">
             <span class="material-symbols-outlined">list_alt</span>Order list 
         </g-sidebar-button>
     </g-sidebar-slot>

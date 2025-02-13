@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'dashboard.contrib.analytics',
     'dashboard.contrib.tables',
     'dashboard.contrib.order',
-    'dashboard.contrib.order_list',
+    'dashboard.contrib.dish',
 ]
 
 

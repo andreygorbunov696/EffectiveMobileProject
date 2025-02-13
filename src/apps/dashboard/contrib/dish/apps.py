@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OrderListConfig(AppConfig):
+class DishConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dashboard.contrib.order_list'
+    name = 'dashboard.contrib.dish'
