@@ -14,13 +14,8 @@
     </head>
     <body>
         {% block content-full %}
-        <g-content-full>
-            {% block content-sidebar %}{% show_sitebar %}{% endblock content-sidebar %}
-            <g-content>
-                {% block content %}{% endblock %}
-            </g-content>
-        </g-content-full>
-            
+            {% block content-sidebar %}{% endblock content-sidebar %}
+            {% block content %}{% endblock %}
         {% endblock content-full %}
         
         {% compress js %}
