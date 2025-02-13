@@ -58,7 +58,11 @@ INSTALLED_APPS = [
     'webpack_loader',
     'compressor',
     'pages',
-    'contrib.tables',
+    'dashboard',
+    'dashboard.contrib.analytics',
+    'dashboard.contrib.tables',
+    'dashboard.contrib.order',
+    'dashboard.contrib.order_list',
 ]
 
 
